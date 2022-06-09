@@ -31,7 +31,7 @@ body {
 	margin-bottom: 1rem;
 }
 
-//icons
+/* icon */
 .icon {
 	font-size: 1.5rem;
 	height: 1.5rem;
@@ -41,7 +41,7 @@ svg {
 	height: 2rem;
 	width: 2rem;
 }
-//notes
+/* notes */
 .container-notes {
 	widht: 90%;
 }
@@ -64,7 +64,7 @@ svg {
 	text-align: right;
 	width: 100%;
 }
-//Tags
+/* Tags */
 .tag {
 	display: inline-block;
 	widht: auto;
@@ -146,7 +146,7 @@ h2 {
 	display: inline-block;
 	width: 80%;
 }
-//select
+/* select */
 .category-filter {
 	max-width: 250px;
 	position: relative;

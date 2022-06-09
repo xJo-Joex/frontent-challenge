@@ -65,10 +65,16 @@ const FormNote = () => {
 		//send the data to the server
 		if (id) {
 			updateData(id, { title: note.title, content: note.content, tags: note.tags.toString() });
+			navigate("/archived-notes");
 		} else {
-			createData({ title: note.title, content: note.content, archived: false });
+			createData({
+				...note,
+				archived: false,
+				tags: note.tags !== undefined ? note.tags.toString() : "",
+			});
+			setNote({ title: "", content: "", archived: false });
+			navigate("/");
 		}
-		navigate("/");
 	};
 
 	return (
@@ -97,7 +103,13 @@ const FormNote = () => {
 						: null}
 				</div>
 				<div>
-					<input onChange={handleChangeCategory} type="text" name="tags" className="input-category" value={category} />
+					<input
+						onChange={handleChangeCategory}
+						type="text"
+						name="tags"
+						className="input-category"
+						value={category}
+					/>
 
 					<button type="button" className="btn-borde" onClick={handleCategory}>
 						Add

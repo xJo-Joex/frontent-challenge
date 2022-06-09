@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	font-family: "Quicksand", sans-serif;
 }
 *,
 *:before,
@@ -8,6 +9,12 @@ html {
 }
 body {
 	background-image: radial-gradient(circle at 46.27% 43.54%, #ffffff 0, #b0c5e6 50%, #4b79ae 100%);
+}
+.center-content {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .container {
 	margin: 0 auto;
@@ -24,23 +31,31 @@ body {
 	margin-bottom: 1rem;
 }
 
-
 //icons
-.btn-borde .icons {
+.icon {
 	font-size: 1.5rem;
 	height: 1.5rem;
 	width: 1.5rem;
 }
-//Note
-.card-note {
-	margin-bottom: 1.5rem;
-	font-size: 1rem;
+svg {
+	height: 2rem;
+	width: 2rem;
+}
+//notes
+.container-notes {
+	widht: 90%;
+}
+
+.target-note {
+	height: 10rem;
+	width: 100%;
 	border-radius: 0.5rem;
-	border: 1px solid #e0e0e0;
-	padding: 1rem;
 	line-height: 2rem;
 	background: #fafafa;
-	/* background-image: radial-gradient(circle at 46.27% 43.54%, #def6ff 0, #74a4ef 50%, #005ab4 100%); */
+	margin-bottom: 1.5rem;
+	font-size: 1rem;
+	border: 1px solid #e0e0e0;
+	padding: 1rem;
 }
 .card-note:hover {
 	background-image: radial-gradient(circle at 46.27% 43.54%, #ffffff 0, #cde0fd 50%, #6a92c5 100%);
@@ -52,7 +67,7 @@ body {
 //Tags
 .tag {
 	display: inline-block;
-	widht:auto;
+	widht: auto;
 	background-color: #e0e0e0;
 	border-radius: 0.5rem;
 	padding: 0.5rem;
@@ -71,10 +86,9 @@ body {
 .btn-borde:hover,
 .btn-borde:active,
 .btn-borde:focus {
-  color: #fff;
+	color: #fff;
 	background-color: #007bff;
-} 
-
+}
 
 .form-create {
 	width: 50vw;
@@ -82,21 +96,20 @@ body {
 	background: #e6e6e6;
 	border-radius: 8px;
 	box-shadow: 0 0 40px -10px #000;
-	margin: calc(50vh - 220px) auto;
 	padding: 20px 30px;
 	max-width: calc(100vw - 40px);
 	box-sizing: border-box;
 	font-family: "Montserrat", sans-serif;
 	position: relative;
+	margin-top: 5vh;
 }
 @media (max-width: 508px) {
-  .form-create {
-  
-    width: 90%;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 1rem;
-  }
+	.form-create {
+		width: 90%;
+		height: 100vh;
+		margin: 0 auto;
+		padding: 1rem;
+	}
 }
 h2 {
 	margin: 10px 0;
@@ -117,7 +130,7 @@ h2 {
 	font-family: "Montserrat", sans-serif;
 	transition: all 0.3s;
 	border-bottom: 2px solid #bebed2;
-  margin-bottom:1rem;
+	margin-bottom: 1rem;
 }
 .form-create textarea {
 	height: 300px;
@@ -129,7 +142,30 @@ h2 {
 .form-create input:focus {
 	border-bottom: 2px solid #78788c;
 }
-.form-create .input-category{
-	display:inline-block;
-	width:80%;
+.form-create .input-category {
+	display: inline-block;
+	width: 80%;
+}
+//select
+.category-filter {
+	max-width: 250px;
+	position: relative;
+}
+.select-filter {
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+	padding: 7px 10px;
+	height: 42px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
 }

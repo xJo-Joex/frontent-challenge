@@ -1,5 +1,5 @@
 import axios from "axios";
-const URI = "http://localhost:4000/notes";
+const URI = "https://notes-backend-challenge.herokuapp.com/notes" || "http://localhost:4000/notes";
 
 //get all data
 export const getData = async (setState) => {

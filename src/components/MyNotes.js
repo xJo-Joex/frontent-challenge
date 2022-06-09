@@ -8,9 +8,9 @@ const MyNotes = ({ category }) => {
 	useEffect(() => {
 		getData(setNotes);
 	}, []);
-
+	// console.log(notes);
 	return (
-		<div className="container">
+		<div className="">
 			<h1>My Notes</h1>
 			<div className="container-nav">
 				<Link to="create-note" className="btn-borde">
@@ -20,11 +20,13 @@ const MyNotes = ({ category }) => {
 					Archived notes
 				</Link>
 			</div>
-			{notes
-				.filter((note) => note.tags.includes(category))
-				.map((note) => {
-					return !note.archived ? <Note key={note.id} note={note} setNotes={setNotes} /> : null;
-				})}
+			<div className="container-notes">
+				{notes
+					?.filter((note) => note?.tags?.includes(category))
+					.map((note) => {
+						return !note.archived ? <Note key={note.id} note={note} setNotes={setNotes} /> : null;
+					})}
+			</div>
 		</div>
 	);
 };

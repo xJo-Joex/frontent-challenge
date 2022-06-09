@@ -4,11 +4,11 @@ import Note from "./Note";
 import { getData } from "../Request";
 
 //list of notes
-const ArchivedNotes = () => {
-	const [notes, setNotes] = useState([]);
+const ArchivedNotes = ({notes}) => {
+	const [notesUpdate, setNotes] = useState(notes);
 	useEffect(() => {
 		getData(setNotes);
-	}, []);
+	}, [notes]);
 	return (
 		<div className="container">
 			<h1>Archive Notes</h1>
@@ -16,7 +16,7 @@ const ArchivedNotes = () => {
 				<Link to="/" className="btn-borde">My Notes</Link>
 			</div>
 
-			{notes?.map((note) => {
+			{notesUpdate?.map((note) => {
 				return note.archived ? <Note key={note.id} note={note} /> : null;
 			})}
 		</div>

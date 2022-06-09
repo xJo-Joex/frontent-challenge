@@ -25,7 +25,7 @@ const CategoryFilter = ({ notes, onFilter }) => {
 	return (
 		<div className="category-filter">
 			<p>Category Filter: </p>
-			<select id="category" name="category" onChange={handleChange} value={selected}>
+			<select id="category" name="category" className="select-filter" onChange={handleChange} value={selected}>
 				<option value="">All</option>
 				{categories.map((category) => (
 					<option key={category} value={category}>
@@ -33,7 +33,7 @@ const CategoryFilter = ({ notes, onFilter }) => {
 					</option>
 				))}
 			</select>
-			<MyNotes category={selected} />
+			<MyNotes category={selected}/>{}
 		</div>
 	);
 };

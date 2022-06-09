@@ -1,4 +1,3 @@
-
 import CategoryFilter from "../components/CategoryFilter";
 import { useState, useEffect } from "react";
 import { getData } from "../Request";
@@ -11,7 +10,7 @@ const Home = () => {
 
 	return (
 		<div className="container">
-			<CategoryFilter notes={notes} />;
+			{<CategoryFilter notes={notes} />}
 		</div>
 	);
 };

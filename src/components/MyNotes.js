@@ -7,8 +7,7 @@ const MyNotes = ({ category }) => {
 	const [notes, setNotes] = useState([]);
 	useEffect(() => {
 		getData(setNotes);
-	}, []);
-	// console.log(notes);
+	}, [notes]);
 	return (
 		<div className="">
 			<h1>My Notes</h1>

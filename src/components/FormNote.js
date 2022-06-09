@@ -29,7 +29,6 @@ const FormNote = () => {
 			setNote({ ...note, tags: [category] });
 		}
 		setCategories("");
-		console.log(category);
 	};
 
 	//capture the form data
@@ -38,7 +37,6 @@ const FormNote = () => {
 	};
 	//capture category write
 	const handleChangeCategory = (e) => {
-		console.log(e.target.value);
 		setCategories(e.target.value);
 	};
 	//delete category of state
@@ -65,7 +63,6 @@ const FormNote = () => {
 		//send the data to the server
 		if (id) {
 			updateData(id, { title: note.title, content: note.content, tags: note.tags.toString() });
-			navigate("/archived-notes");
 		} else {
 			createData({
 				...note,
@@ -73,8 +70,8 @@ const FormNote = () => {
 				tags: note.tags !== undefined ? note.tags.toString() : "",
 			});
 			setNote({ title: "", content: "", archived: false });
-			navigate("/");
 		}
+		navigate("/");
 	};
 
 	return (

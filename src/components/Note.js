@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { deleteData, updateData, getData } from "../Request";
 const Note = ({ note, setNotes }) => {
 	const navigate = useNavigate();
+	//control
+	const [noteCurrent, setNoteCurrent] = useState(note);
+	const [styleNote, setStyleNote] = useState(false);
 
 	useEffect(() => {
 		getData(setNotes);
-	}, [note.archived]);
+	}, [noteCurrent]);
 
 	const handleClickEdit = () => {
 		navigate(`/edit-note/${note.id}`);
@@ -15,15 +18,20 @@ const Note = ({ note, setNotes }) => {
 	//archive note or unarchive note
 	const handleClickArchived = async () => {
 		//update note in database
+		setNoteCurrent({ ...noteCurrent, archived: !noteCurrent.archived });
+		setStyleNote(true);
+		// setNotes((notes) => ({ ...notes, noteCurrent }));
 		updateData(note.id, { archived: !note.archived });
+		navigate("/");
 	};
 
 	//delete note
 	const handleClickDelete = async () => {
+		setStyleNote(true);
 		deleteData(note.id);
 	};
 	return (
-		<div className="target-note">
+		<div className='target-note'>
 			<div className="note">{note.title}</div>
 			<div className="note">{note.updatedAt}</div>
 			<div className="container-btn">

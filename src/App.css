@@ -57,6 +57,9 @@ svg {
 	border: 1px solid #e0e0e0;
 	padding: 1rem;
 }
+.transition-note {
+	/* transition: all 0.3s; */
+}
 .card-note:hover {
 	background-image: radial-gradient(circle at 46.27% 43.54%, #ffffff 0, #cde0fd 50%, #6a92c5 100%);
 }
@@ -148,7 +151,6 @@ h2 {
 }
 /* select */
 .category-filter {
-	max-width: 250px;
 	position: relative;
 }
 .select-filter {

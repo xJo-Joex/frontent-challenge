@@ -9,7 +9,7 @@ const Note = ({ note, setNotes }) => {
 
 	useEffect(() => {
 		getData(setNotes);
-	}, [noteCurrent]);
+	}, []);
 
 	const handleClickEdit = () => {
 		navigate(`/edit-note/${note.id}`);
